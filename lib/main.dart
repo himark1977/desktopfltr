@@ -33,6 +33,7 @@ class MyDesktopEnv extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.black, // changed: make app background black
         body: Stack(
           children: [
             DesktopScreen(),

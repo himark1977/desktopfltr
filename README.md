@@ -4,13 +4,26 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+flutter clean
+flutter pub get
 
-A few resources to get you started if this is your first Flutter project:
+flutter run -d linux
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+sudo apt install xorg xserver-xorg xinit
+sudo apt update
+sudo apt install git curl unzip build-essential clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+git clone https://github.com/flutter/flutter.git -b stable
+export PATH="$PATH:$HOME/flutter/bin"
+flutter doctor
+
+flutter config --enable-linux-desktop
+
+flutter build linux
+
+touch ~/.xinitrc
+#!/bin/sh
+exec /home/USERNAME/desktopfltr/build/linux/arm64/release/bundle/desktopenv_fltr
+
+startx
+
